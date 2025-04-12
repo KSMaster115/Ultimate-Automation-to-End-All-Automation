@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Ultimate_Workflower_Madhav" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="818.4,415.2" sap2010:WorkflowViewState.IdRef="Ultimate_Workflower_Madhav_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Ultimate_Workflower_Madhav" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="760.8,1803.2" sap2010:WorkflowViewState.IdRef="Ultimate_Workflower_Madhav_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -25,6 +25,18 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -63,14 +75,182 @@
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Ultimate_Workflower_Madhav" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Ultimate_Workflower_Madhav" sap:VirtualizedContainerService.HintSize="771.2,1738.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="emailBody" />
+      <Variable x:TypeArguments="x:Int32" Name="retryCount">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="maxRetries">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="5" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Name="dataExtracted">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Boolean" />
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Helllo - Madhav&quot;]" />
+    <Assign sap:VirtualizedContainerService.HintSize="708.8,83.2" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[emailBody]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">["Hi Team,
+Please assist with the reactivation of user ID: EYS12345 for the Training Partners portal. The account was deactivated due to inactivity but is now required for audit reporting.
+Best,
+Preeti
+"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: RPA Project ChatBot" sap:VirtualizedContainerService.HintSize="708.8,1503.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="824c37a5-74e9-4a52-a000-fe7f462b928b" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="675.2,1286.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Name="dt_dataFromAI" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Enter your prompt'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="612.8,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="824c37a5-74e9-4a52-a000-fe7f462b928b" Text="[emailBody]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://rpa2.onrender.com/" DesignTimeRectangle="708, 374, 504, 119" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'TEXTAREA prompt'" FullSelectorArgument="&lt;webctrl id='prompt' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl id='prompt' tag='TEXTAREA' type='' class='' aaname='Enter your prompt:' /&gt;" Guid="e57f4aaf-1020-4999-a3a6-13225730c162" InformativeScreenshot="6910eae4070a4e5ea8fdc7dc1b120143.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RPA Project ChatBot' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="883, 351, 153, 22" ElementType="Text" FriendlyName="'Enter your prompt'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Enter your prompt:' check:innerText='Enter your prompt:' /&gt;" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="612.8,916" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+              <ui:InterruptibleDoWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="579.2,779.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="536,689.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                    <TryCatch.Try>
+                      <Sequence sap:VirtualizedContainerService.HintSize="496,719.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Extract Text'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="824c37a5-74e9-4a52-a000-fe7f462b928b" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://rpa2.onrender.com/" DesignTimeRectangle="882, 521, 154, 48" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Extract Text'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='' aaname='Extract Text' check:innerText='Extract Text' /&gt;" Guid="9287049d-8a25-4b65-a7a4-bf27b2bf030d" InformativeScreenshot="7623f7747a4d94ed7e6e27a0f28b79f6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RPA Project ChatBot' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_dataFromAI]" DelayAfter="10" DelayBefore="10" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='webData' ReferenceName='Column0'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="824c37a5-74e9-4a52-a000-fe7f462b928b" Version="V3">
+                          <uix:NExtractData.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="584, 420, 750, 597" DesignTimeScaleFactor="1.25" FriendlyName="'Team Account'" FullSelectorArgument="&lt;webctrl id='result' tag='DIV' /&gt;" Guid="46175051-79e0-47ed-8789-91a559c1ae68" InformativeScreenshot="844c767341fd1494eb9ac1077af3d6ae.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RPA Project ChatBot' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NExtractData.Target>
+                        </uix:NExtractData>
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="433.6,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[dt_dataFromAI.Rows(0)(0).ToString]" />
+                        <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[dataExtracted]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="502.4,524.8" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Sequence sap:VirtualizedContainerService.HintSize="496,454.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Int32">[retryCount]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Int32">[retryCount+1]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="433.6,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;Retrying... attempt &quot; + retryCount.ToString]" />
+                            <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="433.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                          </Sequence>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                </Sequence>
+              </ui:InterruptibleDoWhile.Body>
+              <ui:InterruptibleDoWhile.Condition>
+                <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="retryCount &lt; maxRetries And Not dataExtracted" />
+              </ui:InterruptibleDoWhile.Condition>
+            </ui:InterruptibleDoWhile>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="6b6002b464d8e1fc3cec27216f1f416a.jpg" Selector="&lt;html app='chrome.exe' title='RPA Project ChatBot' /&gt;" Title="RPA Project ChatBot" Url="https://rpa2.onrender.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>
