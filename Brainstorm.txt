@@ -1,0 +1,5 @@
+RPA flows needed: 
+- Take email content and classify based on keyword (AI)
+- Raise ticket/fill google form + get ticket ID
+- Send email to concerned + CC respective team
+- Download weekly report and store somewhere (CSV)
