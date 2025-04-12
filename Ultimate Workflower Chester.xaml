@@ -151,15 +151,8 @@
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
     <p:DocumentReadText FilePath="{x:Null}" PathResource="{x:Null}" Text="{x:Null}" DisplayName="Read Text" sap:VirtualizedContainerService.HintSize="530,90" sap2010:WorkflowViewState.IdRef="DocumentReadText_1" />
-    <Assign sap:VirtualizedContainerService.HintSize="530,82" sap2010:WorkflowViewState.IdRef="Assign_2">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[EmailBody]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[EmailBody.Replace("[X]", ClientName).Replace("[Link]", SurveyLink).Replace("[Sender Name]", Researcher)]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="530,90" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[EmailBody]" />
+    <Assign sap:VirtualizedContainerService.HintSize="530,82" sap2010:WorkflowViewState.IdRef="Assign_2" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="530,90" sap2010:WorkflowViewState.IdRef="WriteLine_1" />
     <umab:OutlookApplicationCard Account="{x:Null}" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="530,671" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_1">
       <umab:OutlookApplicationCard.Body>
         <ActivityAction x:TypeArguments="um:IMailQuickHandle">
