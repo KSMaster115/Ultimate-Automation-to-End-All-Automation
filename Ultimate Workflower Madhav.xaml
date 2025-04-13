@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>760.8,1242.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>802.4,3216.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Ultimate_Workflower_Madhav_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -128,7 +128,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Ultimate_Workflower_Madhav" sap:VirtualizedContainerService.HintSize="732.8,1177.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Ultimate_Workflower_Madhav" sap:VirtualizedContainerService.HintSize="812.8,3152" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="emailBody" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="retryCount" />
@@ -140,7 +140,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <umab:OutlookApplicationCard Account="MADHAVRA001@e.ntu.edu.sg" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="670.4,849.6" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_1">
+    <umab:OutlookApplicationCard Account="MADHAVRA001@e.ntu.edu.sg" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="750.4,849.6" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_1">
       <umab:OutlookApplicationCard.Body>
         <ActivityAction x:TypeArguments="um:IMailQuickHandle">
           <ActivityAction.Argument>
@@ -205,25 +205,25 @@
         </ActivityAction>
       </umab:OutlookApplicationCard.Body>
     </umab:OutlookApplicationCard>
-    <Assign sap:VirtualizedContainerService.HintSize="670.4,83.2" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="750.4,83.2" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[emailBody]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String" xml:space="preserve">["Hi Team,
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">Hi Team,
 Please assist with the reactivation of user ID: EYS12345 for the Training Partners portal. The account was deactivated due to inactivity but is now required for audit reporting.
 Best,
 Preeti
-"]</InArgument>
+</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: RPA Project ChatBot" sap:VirtualizedContainerService.HintSize="670.4,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="824c37a5-74e9-4a52-a000-fe7f462b928b" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: RPA Project ChatBot" sap:VirtualizedContainerService.HintSize="750.4,2027.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="824c37a5-74e9-4a52-a000-fe7f462b928b" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="716.8,1767.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="716.8,1770.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dt_dataFromAI" />
             </Sequence.Variables>
@@ -232,7 +232,7 @@ Preeti
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Enter your prompt'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="654.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="824c37a5-74e9-4a52-a000-fe7f462b928b" Text="[emailBody]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Enter your prompt'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="654.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="824c37a5-74e9-4a52-a000-fe7f462b928b" Text="[EmailBody]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://rpa2.onrender.com/" DesignTimeRectangle="708, 374, 504, 119" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'TEXTAREA prompt'" FullSelectorArgument="&lt;webctrl id='prompt' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl id='prompt' tag='TEXTAREA' type='' class='' aaname='Enter your prompt:' /&gt;" Guid="e57f4aaf-1020-4999-a3a6-13225730c162" InformativeScreenshot="6910eae4070a4e5ea8fdc7dc1b120143.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RPA Project ChatBot' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -328,7 +328,7 @@ Preeti
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                           </ActivityAction.Argument>
-                          <Sequence sap:VirtualizedContainerService.HintSize="496,453.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <Sequence sap:VirtualizedContainerService.HintSize="496,454.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -366,7 +366,7 @@ Preeti
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
