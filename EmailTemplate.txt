@@ -1,0 +1,12 @@
+Dear {0},
+
+Your issue has been noted and a Gira ticket has been raised for you.
+
+Your Gira unique ID is {1}.
+
+Thank you and have a nice day.
+
+Regards,
+IT Support Team
+
+*This is an automated reply. Please do not reply to this email.
