@@ -174,7 +174,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[CurrentRow(&quot;Team&quot;).ToString.ToLower = &quot;Course&quot;.ToLower]" sap:VirtualizedContainerService.HintSize="411.2,414.4" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[CurrentRow(&quot;Team&quot;).ToString.ToLower =  Team.ToString.ToLower]" sap:VirtualizedContainerService.HintSize="411.2,414.4" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
