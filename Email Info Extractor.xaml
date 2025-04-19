@@ -1,12 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="Team" Type="InArgument(x:String)" />
-    <x:Property Name="CcEmails" Type="OutArgument(s:String[])" />
+    <x:Property Name="CcEmails" Type="OutArgument(scg:IList(x:String))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1732,1047</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1171.2,1185.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -67,6 +67,7 @@
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>UiPath.Activities.System.Collections</x:String>
       <x:String>UiPath.Activities.System.Arrays</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -143,42 +144,61 @@
       <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="548,982" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="550.4,1120.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_TeamEmails" />
-      <Variable x:TypeArguments="s:String[]" Name="CcEmails" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadCsvFile DataTable="[dt_TeamEmails]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Team Email Address.csv" sap:VirtualizedContainerService.HintSize="486,154" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_TeamEmails]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="486,677" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ReadCsvFile DataTable="[dt_TeamEmails]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Team Email Address.csv" sap:VirtualizedContainerService.HintSize="488,155.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
+    <Assign sap:VirtualizedContainerService.HintSize="488,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:IList(x:String)">[CcEmails]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:IList(x:String)">[New List(Of String)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_TeamEmails]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,692" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,491" sap2010:WorkflowViewState.IdRef="Sequence_18">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="454.4,504" sap2010:WorkflowViewState.IdRef="Sequence_18">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[CurrentRow(&quot;Team&quot;).ToString.ToLower = Team.ToString.ToLower]" sap:VirtualizedContainerService.HintSize="410,403" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[CurrentRow(&quot;Team&quot;).ToString.ToLower = &quot;Course&quot;.ToLower]" sap:VirtualizedContainerService.HintSize="411.2,414.4" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,221" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <Sequence sap:VirtualizedContainerService.HintSize="377.6,231.2" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uasa:AppendItemToList x:TypeArguments="x:Object" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1" ItemToAppend="[CurrentRow(&quot;Email&quot;).ToString]" List="[CcEmails]" />
+                  <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[CcEmails]" DisplayName="Append Items to Collection" sap:VirtualizedContainerService.HintSize="334.4,141.6" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_1">
+                    <uasc:AppendItemToCollection.Items>
+                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                        <InArgument x:TypeArguments="x:String">[CurrentRow("Email").ToString]</InArgument>
+                      </scg:List>
+                    </uasc:AppendItemToCollection.Items>
+                  </uasc:AppendItemToCollection>
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -190,6 +210,12 @@
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
   </Sequence>
 </Activity>

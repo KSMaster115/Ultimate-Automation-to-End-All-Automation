@@ -200,7 +200,7 @@
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Email Info Extractor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="478.4,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Email Info Extractor.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="Team">[Extracted_Team]</InArgument>
-                        <OutArgument x:TypeArguments="s:String[]" x:Key="CcEmails">[Extracted_CcEmails]</OutArgument>
+                        <OutArgument x:TypeArguments="scg:IList(x:String)" x:Key="CcEmails" />
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <p:DocumentReadText FilePath="{x:Null}" DisplayName="Read Text" sap:VirtualizedContainerService.HintSize="478.4,90.4" sap2010:WorkflowViewState.IdRef="DocumentReadText_1" PathResource="[LocalResource.FromPath(&quot;EmailTemplate.txt&quot;)]" Text="[EmailTemplate]" />
