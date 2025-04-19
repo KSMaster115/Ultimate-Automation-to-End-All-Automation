@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1171.2,2118.4" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1171.2,2248.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -99,19 +99,19 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="732.8,2053.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="732.8,2184" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <umab:OutlookApplicationCard Account="MADHAVRA001@e.ntu.edu.sg" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="670.4,1941.6" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_1">
+    <umab:OutlookApplicationCard Account="MADHAVRA001@e.ntu.edu.sg" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="670.4,2072" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_1">
       <umab:OutlookApplicationCard.Body>
         <ActivityAction x:TypeArguments="um:IMailQuickHandle">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Outlook" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="636.8,1760" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="636.8,1890.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="CurrentMail" />
             </Sequence.Variables>
@@ -120,7 +120,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <umab:ForEachEmailX MailFilter="{x:Null}" DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="574.4,1648" sap2010:WorkflowViewState.IdRef="ForEachEmailX_2" IncludeSubfolders="False" Mails="[Outlook.Folder(&quot;ProcessedByBot&quot;)]" NumberOfEmailsLimit="1" UnreadOnly="True" WithAttachmentsOnly="False">
+            <umab:ForEachEmailX MailFilter="{x:Null}" DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="574.4,1778.4" sap2010:WorkflowViewState.IdRef="ForEachEmailX_2" IncludeSubfolders="False" Mails="[Outlook.Folder(&quot;ProcessedByBot&quot;)]" NumberOfEmailsLimit="1" UnreadOnly="True" WithAttachmentsOnly="False">
               <umab:ForEachEmailX.Body>
                 <ActivityAction x:TypeArguments="snm:MailMessage, x:Int32">
                   <ActivityAction.Argument1>
@@ -129,14 +129,14 @@
                   <ActivityAction.Argument2>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                   </ActivityAction.Argument2>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540.8,1384" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540.8,1514.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Name="EmailSubject" />
-                      <Variable x:TypeArguments="x:String" Name="EmailBody" />
+                      <Variable x:TypeArguments="x:String" Name="in_EmailSubject" />
+                      <Variable x:TypeArguments="x:String" Name="in_EmailBody" />
                       <Variable x:TypeArguments="x:String" Name="Extracted_Team" />
                       <Variable x:TypeArguments="x:String" Name="Extracted_Priority" />
                       <Variable x:TypeArguments="x:String" Name="Extracted_Issue" />
-                      <Variable x:TypeArguments="x:String" Name="SenderEmail" />
+                      <Variable x:TypeArguments="x:String" Name="in_SenderEmail" />
                       <Variable x:TypeArguments="x:String" Name="Extracted_UniqueID" />
                       <Variable x:TypeArguments="x:String" Name="EmailTemplate" />
                       <Variable x:TypeArguments="s:String[]" Name="Extracted_CcEmails" />
@@ -151,7 +151,7 @@
                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
                             <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">[SenderEmail]</OutArgument>
+                              <OutArgument x:TypeArguments="x:String">[in_SenderEmail]</OutArgument>
                             </ui:AssignOperation.To>
                             <ui:AssignOperation.Value>
                               <InArgument x:TypeArguments="x:String">[CurrentMail.SenderEmailAddress]</InArgument>
@@ -159,7 +159,7 @@
                           </ui:AssignOperation>
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
                             <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">[EmailSubject]</OutArgument>
+                              <OutArgument x:TypeArguments="x:String">[in_EmailSubject]</OutArgument>
                             </ui:AssignOperation.To>
                             <ui:AssignOperation.Value>
                               <InArgument x:TypeArguments="x:String">[CurrentMail.Subject]</InArgument>
@@ -167,23 +167,24 @@
                           </ui:AssignOperation>
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
                             <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">[EmailBody]</OutArgument>
+                              <OutArgument x:TypeArguments="x:String">[in_EmailBody]</OutArgument>
                             </ui:AssignOperation.To>
                             <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">[CurrentMail.Body]</InArgument>
+                              <InArgument x:TypeArguments="x:String">[CurrentMail.Body.ToString.Trim]</InArgument>
                             </ui:AssignOperation.Value>
                           </ui:AssignOperation>
                         </scg:List>
                       </ui:MultipleAssign.AssignOperations>
                     </ui:MultipleAssign>
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="478.4,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[in_EmailBody]" />
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AI Extractor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="478.4,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="AI Extractor.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <OutArgument x:TypeArguments="x:String" x:Key="Team">[Extracted_Team]</OutArgument>
                         <OutArgument x:TypeArguments="x:String" x:Key="Priority">[Extracted_Priority]</OutArgument>
                         <OutArgument x:TypeArguments="x:String" x:Key="Issue">[Extracted_Issue]</OutArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="SenderEmail">[SenderEmail]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="EmailSubject">[EmailSubject]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="EmailBody">[EmailBody]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="SenderEmail">[in_SenderEmail]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="EmailSubject">[in_EmailSubject]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="EmailBody">[in_EmailBody]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Gira Filer.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="478.4,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Gira Filer.xaml">
@@ -192,8 +193,8 @@
                         <InArgument x:TypeArguments="x:String" x:Key="Team">[Extracted_Team]</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="Priority">[Extracted_Priority]</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="Issue">[Extracted_Issue]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="SenderEmail">[SenderEmail]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="EmailSubject">[EmailSubject]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="SenderEmail">[in_SenderEmail]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="EmailSubject">[in_EmailSubject]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Email Info Extractor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="478.4,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Email Info Extractor.xaml">
@@ -203,7 +204,7 @@
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <p:DocumentReadText FilePath="{x:Null}" DisplayName="Read Text" sap:VirtualizedContainerService.HintSize="478.4,90.4" sap2010:WorkflowViewState.IdRef="DocumentReadText_1" PathResource="[LocalResource.FromPath(&quot;EmailTemplate.txt&quot;)]" Text="[EmailTemplate]" />
-                    <umab:ReplyToMailX Bcc="{x:Null}" HtmlBodyFromText="{x:Null}" NewSubject="{x:Null}" AdditionalCc="[String.Join(&quot;;&quot;, Extracted_CcEmails)]" AdditionalTo="[SenderEmail]" Body="[String.Format(EmailTemplate, CurrentMail.Sender.DisplayName.ToString, Extracted_UniqueID)]" BodyType="Text" DisplayName="Reply To Email" sap:VirtualizedContainerService.HintSize="478.4,369.6" sap2010:WorkflowViewState.IdRef="ReplyToMailX_1" IsDraft="False" MailMessage="[CurrentMail]" MaxBodyDocumentSizeMB="2" ReplyToAll="False" UseDocumentAsBody="False">
+                    <umab:ReplyToMailX AdditionalCc="{x:Null}" Bcc="{x:Null}" HtmlBodyFromText="{x:Null}" NewSubject="{x:Null}" AdditionalTo="[in_SenderEmail]" Body="[String.Format(EmailTemplate, CurrentMail.Sender.DisplayName.ToString, Extracted_UniqueID)]" BodyType="Text" DisplayName="Reply To Email" sap:VirtualizedContainerService.HintSize="478.4,369.6" sap2010:WorkflowViewState.IdRef="ReplyToMailX_1" IsDraft="False" MailMessage="[CurrentMail]" MaxBodyDocumentSizeMB="2" ReplyToAll="False" UseDocumentAsBody="False">
                       <umab:ReplyToMailX.Files>
                         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                       </umab:ReplyToMailX.Files>
