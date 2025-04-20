@@ -182,8 +182,6 @@
                         <OutArgument x:TypeArguments="x:String" x:Key="Team">[Extracted_Team]</OutArgument>
                         <OutArgument x:TypeArguments="x:String" x:Key="Priority">[Extracted_Priority]</OutArgument>
                         <OutArgument x:TypeArguments="x:String" x:Key="Issue">[Extracted_Issue]</OutArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="SenderEmail">[in_SenderEmail]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="EmailSubject">[in_EmailSubject]</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="EmailBody">[in_EmailBody]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
